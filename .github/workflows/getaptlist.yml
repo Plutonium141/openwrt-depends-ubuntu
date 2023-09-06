@@ -22,13 +22,12 @@ jobs:
       - name: Run a one-line script
         run: |
            curl -s https://raw.githubusercontent.com/coolsnowwolf/lede/master/README.md | sed -n '/sudo apt install -y/,/```/p' >> list1
-           cat list1
            sed -i 's/   //g' list1
            sed -i 's/```//g' list1
            sed -i 's/sudo apt install -y //g' list1
            sed -i 's/\\//g' list1
            cat list1 | tr -d '\n' > list2
-           echo '\n' >> lilst2
+           echo '\n' >> list2
            cat list2
            ls
            cat ubuntu
